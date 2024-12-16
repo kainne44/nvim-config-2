@@ -105,4 +105,6 @@ vim.g.netrw_banner = 0
 
 vim.cmd [[highlight ColorColumn ctermbg=1 guibg=lightgrey]]
 
+vim.opt.conceallevel = 2
+
 -- vim: ts=2 sts=2 sw=2 et

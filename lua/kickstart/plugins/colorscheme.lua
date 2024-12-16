@@ -162,7 +162,7 @@ return {
             { 'RenderMarkdownH4Bg', '#21262f', '#00a9b9' },
             { 'RenderMarkdownH5Bg', '#21262f', '#fa5f8b' },
             { 'RenderMarkdownH6Bg', '#21262f', '#e17954' },
-            { 'RenderMarkdownCode', '#d3ab58', '#393e48' },
+            --            { 'RenderMarkdownCode', '#d3ab58', '#393e48' },
             { 'RenderMarkdownQuote', '#525762', '#21262f' },
             { 'RenderMarkdownDash', '#00a3d2', '#21262f' },
             { 'RenderMarkdownSign', '#00a3d2', '#21262f' },

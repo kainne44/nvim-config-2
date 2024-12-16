@@ -110,6 +110,10 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'render-markdown' },
+        },
+        formatting = {
+          format = require('nvim-highlight-colors').format,
         },
       }
     end,

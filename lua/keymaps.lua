@@ -1,5 +1,7 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+-- Save files faster
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Save File' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
