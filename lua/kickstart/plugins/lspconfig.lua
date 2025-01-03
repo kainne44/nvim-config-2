@@ -204,6 +204,14 @@ return {
             },
           },
         },
+
+        ltex = {
+          settings = {
+            ltex = {
+              checkFrequency = 'save',
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -222,6 +230,15 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+      -- require('lspconfig').ltex.setup {
+      --   on_attach = require('lsp-format').on_attach,
+      --   settings = {
+      --     ltex = {
+      --       checkFrequency = 'save',
+      --     },
+      --   },
+      -- }
+      --
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)

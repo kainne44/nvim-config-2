@@ -18,6 +18,7 @@ return {
           path = '~/vaults/notes',
         },
       },
+      ui = { enable = false },
     }
   end,
 }
