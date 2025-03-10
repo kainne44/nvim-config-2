@@ -23,3 +23,14 @@ obsidian and its links, but I don't want to use their software. I like neorg but
 I would prefer to use markdown. I like render-markdown.nvim, but it doesn't have
 the linking I need. I like telekasten.nvim but it doesn't allow render-markdown
 to work (I need to verify this, could just be a load order issue).
+
+Update: 03/09/2025
+I have added the ObsidianMarkdown plugin for neovim. It allows me to create
+markdown files from the neovim command interface without having to go into
+obsidian, and they are organized in a vault. It's exactly what I was looking
+for.
+I have also updated some of the formatting and am working to fix some of the
+weird errors that I get when saving.
+Looking to add jupyter notebook support to my neovim config. I don't love
+working in them, but they are convenient when I want to assess sections of code
+on their own -- especially with python, debugging is a little easier.

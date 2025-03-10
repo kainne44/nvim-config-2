@@ -95,7 +95,7 @@ vim.opt.isfname:append '@-@'
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = '80'
+-- vim.opt.colorcolumn = '80'
 vim.o.fillchars = [[eob: ,fold: ,foldopen:>,foldsep: ,foldclose:v]]
 vim.o.foldcolumn = '1'
 
