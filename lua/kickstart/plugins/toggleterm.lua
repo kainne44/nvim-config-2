@@ -10,7 +10,7 @@ return {
           return vim.o.columns * 0.4
         end
       end,
-      direction = 'vertical',
+      direction = 'horizontal',
       open_mapping = [[<c-\>]],
     },
   },

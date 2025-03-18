@@ -7,6 +7,8 @@ return {
       require('bufferline').setup {
         options = {
           mode = 'buffers',
+          numbers = 'ordinal',
+          separator_style = 'slant',
         },
       }
     end,

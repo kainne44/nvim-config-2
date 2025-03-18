@@ -204,14 +204,6 @@ return {
             },
           },
         },
-
-        ltex = {
-          settings = {
-            ltex = {
-              checkFrequency = 'save',
-            },
-          },
-        },
       }
 
       -- Ensure the servers and tools above are installed

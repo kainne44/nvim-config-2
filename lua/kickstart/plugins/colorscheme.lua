@@ -88,8 +88,8 @@ return {
             { '@lsp.typemod.property.declaration.rust', '#a6abb8' },
 
             -- Visual Mode
-            { 'Visual', '#d3ab58', '#393e48' },
-            { 'VisualNOS', '#e17954', '#393e48' },
+            { 'Visual', nil, '#393e48' },
+            { 'VisualNOS', nil, '#393e48' },
 
             -- Line Numbers
             { 'LineNr', '#00ab9a' },
