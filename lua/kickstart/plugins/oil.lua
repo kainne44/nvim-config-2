@@ -1,20 +1,16 @@
 return {
   {
     'stevearc/oil.nvim',
+    lazy = false, -- oil recommends against lazy-loading so it can take over directory buffers
     opts = {
       default_file_explorer = true,
-      columns = {
-        default_file = ...,
-        directory = ...,
-        'icon',
-      },
+      columns = { 'icon' },
       view_options = {
         show_hidden = true,
       },
       buf_options = {
         buflisted = true,
       },
-      lazy = false,
       float = {
         padding = 4,
         max_width = 0.4,

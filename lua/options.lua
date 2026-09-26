@@ -73,37 +73,21 @@ vim.opt.smartindent = true
 vim.opt.wrap = true
 vim.opt.textwidth = 80
 vim.opt.linebreak = true
-vim.opt.breakat = '80'
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
-vim.opt.undofile = true
-vim.opt.breakindent = true
-
---case insensitive search Unless \C or one or more capital letters in search
---term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.signcolumn = 'yes'
 vim.opt.isfname:append '@-@'
-
-vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = '80'
 vim.o.fillchars = [[eob: ,fold: ,foldopen:>,foldsep: ,foldclose:v]]
 vim.o.foldcolumn = '1'
 
-vim.g.mapleader = ' '
-
 vim.g.netrw_banner = 0
-
-vim.cmd [[highlight ColorColumn ctermbg=1 guibg=lightgrey]]
 
 vim.opt.conceallevel = 2
 

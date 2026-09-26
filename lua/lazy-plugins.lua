@@ -30,7 +30,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/lspconfig',
 
---  require 'kickstart/plugins/oml_ls',
+  --  require 'kickstart/plugins/oml_ls',
 
   require 'kickstart/plugins/conform',
 
@@ -48,7 +48,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/snacks',
 
-  --  require 'kickstart/plugins/colorscheme',
+  -- require 'kickstart/plugins/colorscheme',
 
   require 'kickstart/plugins/lualine',
 
@@ -70,17 +70,23 @@ require('lazy').setup({
 
   require 'kickstart/plugins/workspaces',
 
-  require 'kickstart/plugins/image',
+  -- require 'kickstart/plugins/image',
 
-  require 'kickstart/plugins/molten',
-
-  require 'kickstart/plugins/quarto', -- used for molten jupyter notebook editing
-
-  require 'kickstart/plugins/jupytext',
+  -- require 'kickstart/plugins/molten',
+  --
+  -- require 'kickstart/plugins/quarto', -- used for molten jupyter notebook editing
+  --
+  -- require 'kickstart/plugins/jupytext',
 
   require 'kickstart/plugins/focus',
 
-  require 'kickstart/plugins/hardtime',
+  require 'kickstart/plugins/vimtex',
+
+  -- require 'kickstart/plugins/knap',
+
+  require 'kickstart/plugins/trouble',
+
+  -- require 'kickstart/plugins/hardtime',
   -- require 'kickstart/plugins/precognition',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
@@ -97,12 +103,6 @@ require('lazy').setup({
   require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
 
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
-  --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
-  --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`

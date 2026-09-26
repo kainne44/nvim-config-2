@@ -56,12 +56,10 @@ return {
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]lose Buffer', mode = { 'n', 'x', 't' } },
         { '<leader>d', group = '[D]ocument' },
-        { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]rite File' },
         { '<leader>t', group = '[T]oggle' },
+        { '<leader>x', group = 'Trouble' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },

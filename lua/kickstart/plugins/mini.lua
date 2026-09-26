@@ -11,7 +11,6 @@ return {
       require('mini.ai').setup { n_lines = 500 }
       -- require('mini.files').setup {}
       require('mini.move').setup()
-      require('mini.indentscope').setup()
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --

@@ -36,7 +36,7 @@ return {
         python = { 'isort', 'black' },
         json = { 'prettier' },
         markdown = { 'prettier' },
-        svlete = { 'prettier' },
+        svelte = { 'prettier' },
         javascript = { 'prettier' },
         typescript = { 'prettier' },
         yaml = { 'prettier' },

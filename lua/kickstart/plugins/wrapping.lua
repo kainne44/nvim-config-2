@@ -2,7 +2,7 @@ return {
   {
     'andrewferrier/wrapping.nvim',
     config = function()
-        require('wrapping').setup()
+      require('wrapping').setup()
     end,
   },
 }
