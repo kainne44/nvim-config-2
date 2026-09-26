@@ -2,7 +2,7 @@ return {
   { -- Autoformat
     'stevearc/conform.nvim',
     event = { 'BufWritePre', 'BufNewFile' },
-    cmd = { 'ConformInfo' },
+    cmd = { 'ConformInfo', 'FormatNotes' },
     keys = {
       {
         '<leader>f',
@@ -13,12 +13,29 @@ return {
         desc = '[F]ormat buffer',
       },
     },
+    init = function()
+      -- Notes written outside nvim (Obsidian app, scripts, agents) skip format-on-save.
+      -- :FormatNotes runs prettier over every note in the current vault / repo.
+      vim.api.nvim_create_user_command('FormatNotes', function()
+        local root = vim.fs.root(0, { '.obsidian', '.git' }) or vim.fn.getcwd()
+        local prettier = vim.fn.exepath 'prettier'
+        if prettier == '' then
+          return vim.notify('prettier not found (install it with :Mason)', vim.log.levels.ERROR)
+        end
+        vim.notify('Formatting notes in ' .. root)
+        vim.system({ prettier, '--write', '--log-level', 'warn', '**/*.md' }, { cwd = root }, vim.schedule_wrap(function(out)
+          if out.code ~= 0 then
+            return vim.notify('FormatNotes failed:\n' .. out.stderr, vim.log.levels.ERROR)
+          end
+          vim.cmd 'checktime' -- reload open notes that changed
+          vim.notify('Formatted notes in ' .. root)
+        end))
+      end, { desc = 'Format every markdown note in the current vault with prettier' })
+    end,
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
+        -- No LSP fallback for languages without a standard style
         local disable_filetypes = { c = true, cpp = true }
         local lsp_format_opt
         if disable_filetypes[vim.bo[bufnr].filetype] then
@@ -42,11 +59,6 @@ return {
         yaml = { 'prettier' },
         css = { 'prettier' },
         html = { 'prettier' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
     },
   },

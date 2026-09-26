@@ -8,7 +8,10 @@ return {
         options = {
           mode = 'buffers',
           numbers = 'ordinal',
-          separator_style = 'slant',
+          separator_style = { '', '' },
+          indicator = { style = 'underline' },
+          show_buffer_close_icons = false,
+          show_close_icon = false,
         },
       }
     end,

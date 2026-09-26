@@ -3,6 +3,7 @@ return {
     'lervag/vimtex',
     lazy = false, -- load on startup so filetype detection just works
     init = function()
+      -- <localleader> is \ (init.lua), so vimtex's \ll, \lv, ... work
       -- Use Skim as the PDF viewer
       vim.g.vimtex_view_method = 'skim'
       vim.g.vimtex_view_skim_sync = 1
@@ -30,8 +31,6 @@ return {
       vim.g.vimtex_complete_enabled = 1 -- simple completion
       vim.g.vimtex_mappings_enabled = 1
       vim.g.vimtex_syntax_enabled = 1
-
-      -- Recommended: make <localleader> = \ so vimtex default mappings work (\ll, \lv, etc.)
     end,
   },
 }

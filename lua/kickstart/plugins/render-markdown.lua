@@ -1,32 +1,48 @@
 return {
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ft = { 'markdown' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {
       render_modes = true,
+      completions = { lsp = { enabled = true } }, -- callouts/checkboxes via blink's lsp source
+      -- Show raw markdown only on the cursor line, so editing stays readable
+      anti_conceal = { enabled = true },
       heading = {
+        sign = false,
+        position = 'inline',
+        icons = { '󰲡 ', '󰲣 ', '󰲥 ', '󰲧 ', '󰲩 ', '󰲫 ' },
         width = 'block',
-        min_width = 20,
-        border = true,
-        border_virtual = true,
+        left_pad = 1,
+        right_pad = 2,
+        border = false,
       },
       code = {
-        enabled = true,
+        sign = false,
         style = 'full',
         width = 'block',
+        min_width = 60,
         left_pad = 2,
-        right_pad = 4,
+        right_pad = 2,
+        position = 'right',
+        language_pad = 1,
+        border = 'thin',
       },
-      bullet = {
-        left_pad = 4,
+      dash = { icon = '─', width = 'full' },
+      bullet = { icons = { '•', '◦', '▸', '▹' } },
+      checkbox = {
+        unchecked = { icon = '󰄱 ' },
+        checked = { icon = '󰄵 ', scope_highlight = '@markup.strikethrough' },
       },
+      quote = { icon = '▎' },
       pipe_table = {
         preset = 'round',
-        min_width = 12,
+        min_width = 8,
+      },
+      link = {
+        wiki = { icon = '󰌹 ' },
       },
     },
   },
