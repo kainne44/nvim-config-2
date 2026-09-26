@@ -60,7 +60,7 @@ vim.o.winborder = 'rounded' -- all floating windows
 -- Spelling (enabled per filetype, e.g. after/ftplugin/markdown.lua)
 vim.fn.mkdir(vim.fn.stdpath 'config' .. '/spell', 'p')
 opt.spellfile = vim.fn.stdpath 'config' .. '/spell/en.utf-8.add' -- `zg` words live with the config
-opt.spelloptions = { 'camel', 'noplainbuffer' } -- skip camelCase parts; only check prose treesitter marks as @spell
+opt.spelloptions = { 'noplainbuffer' } -- only check prose treesitter marks as @spell (camelCase words are checked whole)
 opt.spellcapcheck = '' -- don't flag lowercase sentence starts (bullets, fragments)
 
 -- vim: ts=2 sts=2 sw=2 et

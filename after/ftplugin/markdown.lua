@@ -25,26 +25,9 @@ display_motion 'k'
 -- Indent guides draw stray bars under headings in prose
 vim.b.snacks_indent = false
 
--- Bare URLs aren't link nodes in the markdown parser, so their path segments get
--- spell-checked. Mark them with spell=false extmarks.
-local url_ns = vim.api.nvim_create_namespace 'markdown_url_nospell'
-local function mark_urls(buf)
-  vim.api.nvim_buf_clear_namespace(buf, url_ns, 0, -1)
-  for lnum, line in ipairs(vim.api.nvim_buf_get_lines(buf, 0, -1, false)) do
-    for s, e in line:gmatch '()%a[%w+.-]*://[^%s<>()]+()' do
-      vim.api.nvim_buf_set_extmark(buf, url_ns, lnum - 1, s - 1, { end_col = e - 1, spell = false })
-    end
-  end
-end
+-- Don't spell-check URLs, IDs, @handles, #tags (patterns in lua/spell_ignore.lua)
 local buf = vim.api.nvim_get_current_buf()
-mark_urls(buf)
-vim.api.nvim_create_autocmd({ 'TextChanged', 'InsertLeave' }, {
-  buffer = buf,
-  group = vim.api.nvim_create_augroup('markdown_url_nospell_' .. buf, { clear = true }),
-  callback = function()
-    mark_urls(buf)
-  end,
-})
+require('spell_ignore').attach(buf)
 
 -- gd follows the link under the cursor (relative paths, #anchors, URLs), then falls back to the LSP.
 -- Set after LspAttach so it wins over the generic `gd` from lspconfig.lua.
